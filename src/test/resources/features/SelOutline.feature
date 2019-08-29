@@ -6,7 +6,7 @@ Feature: Title of your feature
   Scenario Outline: Generate the three set of customer id
     Given user should launch browser
     And user click add customer link
-    When user will provide vaild details"<fname>","<lname>","<email>","<address>","<phone>"
+    When user will provide vaild detailsout"<fname>","<lname>","<email>","<address>","<phone>"
     Then to verified the customer id is displayed
 
     Examples: 

@@ -15,18 +15,25 @@ import cucumber.api.java.en.When;
 
 public class Cucumber {
 static WebDriver driver;
+
 @Given("user should launch browser")
 public void user_should_launch_browser() {
 	System.setProperty("webdriver.chrome.driver","C:\\Users\\Vishal\\eclipse-vishalSel\\cucumbernw\\Dr\\chromedriver.exe");
       driver=new ChromeDriver();
     driver.get("http://demo.guru99.com/telecom/");
 }
-
 @Given("user click add customer link")
 public void user_click_add_customer_link() {
+	driver.findElement(By.xpath("(//a[text()='Add Customer'])[1]")).click();
+}
+
+@Given("user click add customer linkopen")
+public void user_click_add_customer_linkopen() {
 	driver.findElement(By.xpath("//a[text()='Add Tariff Plan']")).click();
 }
-/*@When("user will provide vaild details")
+
+//SCENERIO
+@When("user will provide vaild details")
 public void user_will_provide_vaild_details() {
 	driver.findElement(By.xpath("//label[text()='Done']")).click();  
 	driver.findElement(By.id("fname")).sendKeys("vishal");
@@ -35,10 +42,11 @@ public void user_will_provide_vaild_details() {
 	driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys("Chennai");
 	driver.findElement(By.id("telephoneno")).sendKeys("9865182316");
 	driver.findElement(By.xpath("//input[@name='submit']")).click();  
-}*/
+}
 
-/*@When("user will provide vaild details{string},{string},{string},{string},{string}")
-public void user_will_provide_vaild_details(String fname, String lname, String email, String address, String phone) {
+//SCENERIO OUTLINE
+@When("user will provide vaild detailsout{string},{string},{string},{string},{string}")
+public void user_will_provide_vaild_detailsout(String fname, String lname, String email, String address, String phone) {
 	driver.findElement(By.xpath("//label[text()='Done']")).click();  
 	driver.findElement(By.id("fname")).sendKeys(fname);
 	driver.findElement(By.id("lname")).sendKeys(lname);
@@ -46,11 +54,11 @@ public void user_will_provide_vaild_details(String fname, String lname, String e
 	driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys(address);
 	driver.findElement(By.id("telephoneno")).sendKeys(phone);
 	driver.findElement(By.xpath("//input[@name='submit']")).click();
-}*/
+}
 
-
-/*@When("user will provide vaild details")
-public void user_will_provide_vaild_details(io.cucumber.datatable.DataTable dataTable) {
+//ONE D LIST
+@When("user will provide vaild detailslist")
+public void user_will_provide_vaild_detailslist(io.cucumber.datatable.DataTable dataTable) {
     List<String> oned = dataTable.asList(String.class);
     //System.out.println(oned);
     driver.findElement(By.xpath("//label[text()='Done']")).click();  
@@ -60,10 +68,11 @@ public void user_will_provide_vaild_details(io.cucumber.datatable.DataTable data
 	driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys(oned.get(3));
 	driver.findElement(By.id("telephoneno")).sendKeys(oned.get(4));
 	driver.findElement(By.xpath("//input[@name='submit']")).click();        
-}*/
+}
 
-/*@When("user will provide vaild details")
-public void user_will_provide_vaild_details(io.cucumber.datatable.DataTable dataTable) {
+//ONE D MAP
+@When("user will provide vaild detailsmap")
+public void user_will_provide_vaild_detailsmap(io.cucumber.datatable.DataTable dataTable) {
 Map<String, String> asMap = dataTable.asMap(String.class, String.class);
 driver.findElement(By.xpath("//label[text()='Done']")).click();  
 driver.findElement(By.id("fname")).sendKeys(asMap.get("fname"));
@@ -73,18 +82,13 @@ driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys(asMap.get("add
 driver.findElement(By.id("telephoneno")).sendKeys(asMap.get("phone"));
 driver.findElement(By.xpath("//input[@name='submit']")).click();
 
-}*/
+}
 
-/*@Then("to verified the customer id is displayed")
-public void to_verified_the_customer_id_is_displayed() {
-	Assert.assertTrue(driver.findElement(By.xpath("(//td[@align='center'])[2]")).isDisplayed());
-}*/
-
-/*@When("user will provide vaild details")
-public void user_will_provide_vaild_details(io.cucumber.datatable.DataTable dataTable) {
+//TWO D LIST
+@When("user will provide vaild detailtwod")
+public void user_will_provide_vaild_detailtwod(io.cucumber.datatable.DataTable dataTable) {
 	List<List<String>> twodlist = dataTable.asLists(String.class);
     System.out.println(twodlist);
-   // driver.findElement(By.xpath("(//(a[@href='addtariffplans.php'])[1]")).click();
     driver.findElement(By.id("rental1")).sendKeys(twodlist.get(0).get(0));
     driver.findElement(By.id("local_minutes")).sendKeys(twodlist.get(0).get(1));
     driver.findElement(By.id("inter_minutes")).sendKeys(twodlist.get(0).get(2));
@@ -93,10 +97,11 @@ public void user_will_provide_vaild_details(io.cucumber.datatable.DataTable data
     driver.findElement(By.id("inter_charges")).sendKeys(twodlist.get(2).get(2));
     driver.findElement(By.id("sms_charges")).sendKeys(twodlist.get(2).get(1));
     driver.findElement(By.xpath("//input[@type='submit']")).click();   
-}*/
+}
 
-@When("user will provide vaild details")
-public void user_will_provide_vaild_details(io.cucumber.datatable.DataTable dataTable) {
+//TWO D MAP
+@When("user will provide vaild detailtwodmap")
+public void user_will_provide_vaild_detailtwodmap(io.cucumber.datatable.DataTable dataTable) {
 List<Map<String, String>> twodmap = dataTable.asMaps(String.class,String.class);
 System.out.println(twodmap);
 driver.findElement(By.id("rental1")).sendKeys(twodmap.get(0).get("rental"));
@@ -111,6 +116,11 @@ driver.findElement(By.xpath("//input[@type='submit']")).click();
 
 @Then("to verified the customer id is displayed")
 public void to_verified_the_customer_id_is_displayed() {
+	Assert.assertTrue(driver.findElement(By.xpath("(//td[@align='center'])[2]")).isDisplayed());
+}
+
+@Then("to verified the customer id is displayedss")
+public void to_verified_the_customer_id_is_displayeds() {
 	Assert.assertTrue(driver.findElement(By.xpath("//h2[@style='text-align: center;font-weight: 700;font-size:28px;']")).isDisplayed());
 }
 
