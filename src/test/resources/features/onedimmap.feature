@@ -1,8 +1,8 @@
 @tag
-Feature: Title of your feature
+Feature: One D Map
   I want to use this template for my feature file
 
-  @tag1
+  @tag2
   Scenario: Title of your scenario
     Given user should launch browser
     And user click add customer link

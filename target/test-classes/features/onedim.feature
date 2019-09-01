@@ -1,5 +1,5 @@
 @tag
-Feature: Title of your feature
+Feature: One D List
   I want to use this template for my feature file
 
   @tag1

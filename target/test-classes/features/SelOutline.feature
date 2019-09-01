@@ -1,8 +1,8 @@
 @tag
-Feature: Title of your feature
+Feature: Sel Outline
   I want to use this template for my feature file
 
-  @tag1
+  @tag2
   Scenario Outline: Generate the three set of customer id
     Given user should launch browser
     And user click add customer link

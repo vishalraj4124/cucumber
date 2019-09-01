@@ -1,6 +1,73 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/SelOutline.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/Hook.feature");
 formatter.feature({
-  "name": "Title of your feature",
+  "name": "Try(Scenerio)",
+  "description": "  I want to use this template for my feature file",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@tag"
+    }
+  ]
+});
+formatter.scenario({
+  "name": "Title of your scenario",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@tag"
+    },
+    {
+      "name": "@tag3"
+    }
+  ]
+});
+formatter.step({
+  "name": "user should launch browser",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "Hook.user_should_launch_browser()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user click add customer link",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Cucumber.user_click_add_customer_link()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user will provide vaild details",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Cucumber.user_will_provide_vaild_details()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "to verified the customer id is displayed",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Cucumber.to_verified_the_customer_id_is_displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.uri("src/test/resources/features/SelOutline.feature");
+formatter.feature({
+  "name": "Sel Outline",
   "description": "  I want to use this template for my feature file",
   "keyword": "Feature",
   "tags": [
@@ -15,7 +82,7 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@tag1"
+      "name": "@tag2"
     }
   ]
 });
@@ -87,7 +154,7 @@ formatter.scenario({
       "name": "@tag"
     },
     {
-      "name": "@tag1"
+      "name": "@tag2"
     }
   ]
 });
@@ -96,7 +163,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -131,6 +198,9 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.scenario({
   "name": "Generate the three set of customer id",
   "description": "",
@@ -140,7 +210,7 @@ formatter.scenario({
       "name": "@tag"
     },
     {
-      "name": "@tag1"
+      "name": "@tag2"
     }
   ]
 });
@@ -149,7 +219,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -184,6 +254,9 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.scenario({
   "name": "Generate the three set of customer id",
   "description": "",
@@ -193,7 +266,7 @@ formatter.scenario({
       "name": "@tag"
     },
     {
-      "name": "@tag1"
+      "name": "@tag2"
     }
   ]
 });
@@ -202,7 +275,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -237,9 +310,12 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/onedim.feature");
 formatter.feature({
-  "name": "Title of your feature",
+  "name": "One D List",
   "description": "  I want to use this template for my feature file",
   "keyword": "Feature",
   "tags": [
@@ -266,7 +342,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -312,9 +388,12 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/onedimmap.feature");
 formatter.feature({
-  "name": "Title of your feature",
+  "name": "One D Map",
   "description": "  I want to use this template for my feature file",
   "keyword": "Feature",
   "tags": [
@@ -332,7 +411,7 @@ formatter.scenario({
       "name": "@tag"
     },
     {
-      "name": "@tag1"
+      "name": "@tag2"
     }
   ]
 });
@@ -341,7 +420,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -408,9 +487,12 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/try.feature");
 formatter.feature({
-  "name": "Title of your feature",
+  "name": "Try(Scenerio)",
   "description": "  I want to use this template for my feature file",
   "keyword": "Feature",
   "tags": [
@@ -428,7 +510,7 @@ formatter.scenario({
       "name": "@tag"
     },
     {
-      "name": "@tag1"
+      "name": "@tag3"
     }
   ]
 });
@@ -437,7 +519,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -472,9 +554,12 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/twodlist.feature");
 formatter.feature({
-  "name": "Title of your feature",
+  "name": "Two D List",
   "description": "  I want to use this template for my feature file",
   "keyword": "Feature",
   "tags": [
@@ -501,7 +586,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -571,9 +656,12 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.after({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/twodmap.feature");
 formatter.feature({
-  "name": "Title of your feature",
+  "name": "Two D map",
   "description": "  I want to use this template for my feature file",
   "keyword": "Feature",
   "tags": [
@@ -591,7 +679,7 @@ formatter.scenario({
       "name": "@tag"
     },
     {
-      "name": "@tag1"
+      "name": "@tag2"
     }
   ]
 });
@@ -600,7 +688,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Cucumber.user_should_launch_browser()"
+  "location": "Hook.user_should_launch_browser()"
 });
 formatter.result({
   "status": "passed"
@@ -679,6 +767,9 @@ formatter.match({
   "location": "Cucumber.to_verified_the_customer_id_is_displayeds()"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 });
